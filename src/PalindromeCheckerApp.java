@@ -1,7 +1,19 @@
 public class PalindromeCheckerApp {
     public static void main(String[] args){
-        System.out.println("PalindromeCheckerApp");
-        System.out.println(("Version : 1.0"));
-        System.out.println("System initialized succesfully 1");
+        String s="madam";
+        int n=s.length();
+        int right=0;
+        int left=n-1;
+        boolean a=true;
+        while(left<right){
+            if(s.charAt(left)!=s.charAt(right)){
+                System.out.println("It is not a palindrome");
+                a=false;
+                break;
+            }
+        }
+        if(a){
+            System.out.println(s+" Is is a palindrome");
+        }
     }
 }
