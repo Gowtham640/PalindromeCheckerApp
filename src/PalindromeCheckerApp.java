@@ -9,17 +9,25 @@ public class PalindromeCheckerApp {
         for(int i=0;i<n;i++){
             arr[i]=s.charAt(i);
         }
-        System.out.println("Enter to pop-1 or dequeue-2");
-        int choice=sc.nextInt();
-        int count=0;
-        if(n==1){
-            System.out.println("Popping: " + (char)arr[choice- 1]);
-            arr[n-1]=0;
+        int left=0;
+        int right=n-1;
+        boolean a=true;
+        while(left<right){
+            System.out.println("Checking "+(char)arr[left]+" and "+(char)arr[right]);
+            if ((char) arr[left] !=(char)arr[right]){
+                a=false;
+                System.out.println(s+" is not palindrome");
+                break;
+            }
+            else{
+                arr[left]=0;
+                arr[right]=0;
+                left++;
+                right--;
+            }
         }
-        else{
-            System.out.println("Dequing: " + (char)arr[count]);
-            arr[count]=0;
-            count++;
+        if(a){
+            System.out.println(s+" is palindrome");
         }
     }
 }
