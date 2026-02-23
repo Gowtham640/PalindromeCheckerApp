@@ -1,21 +1,20 @@
 import java.util.Scanner;
 public class PalindromeCheckerApp {
     public static void main(String[] args){
-        Scanner sc=new Scanner(System.in);
-        System.out.print("Input:");
-        String s=sc.nextLine();
-        String s1="";
+        String s="madam";
         int n=s.length();
+        int right=0;
+        int left=n-1;
         boolean a=true;
-        for(int i=n-1;i>=0;i--){
-            s1+=s.charAt(i);
+        while(left<right){
+            if(s.charAt(left)!=s.charAt(right)){
+                System.out.println("It is not a palindrome");
+                a=false;
+                break;
+            }
         }
-        if(s.equals(s1)){
-            System.out.println(s+" is a palindrome");
-        }
-        else {
-            a = false;
-            System.out.println(s + " is not palindrome");
+        if(a){
+            System.out.println(s+" Is is a palindrome");
         }
     }
 }
