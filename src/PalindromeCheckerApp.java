@@ -4,17 +4,18 @@ public class PalindromeCheckerApp {
         Scanner sc=new Scanner(System.in);
         System.out.print("Input:");
         String s=sc.nextLine();
+        String s1="";
         int n=s.length();
         boolean a=true;
-        for(int i=0;i<n/2;i++){
-            if(s.charAt(i)!=s.charAt(n-1-i)){
-                a=false;
-                System.out.println(s+ " is not a palindrome");
-                break;
-            }
+        for(int i=n-1;i>=0;i--){
+            s1+=s.charAt(i);
         }
-        if(a){
-            System.out.println(s+ " is a palindrome");
+        if(s.equals(s1)){
+            System.out.println(s+" is a palindrome");
+        }
+        else {
+            a = false;
+            System.out.println(s + " is not palindrome");
         }
     }
 }
