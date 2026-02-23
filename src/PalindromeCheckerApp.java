@@ -5,20 +5,25 @@ public class PalindromeCheckerApp {
         System.out.print("Input:");
         String s=sc.nextLine();
         int n=s.length();
-        boolean a=true;
         int arr[]=new int[n];
         for(int i=0;i<n;i++){
             arr[i]=s.charAt(i);
         }
-        int count=0;
-        for(int i=n-1;i>=0;i--){
-            if(arr[i]!=s.charAt(count)){
-                System.out.println(s+" is not a palindrome");
+        int left=0;
+        int right=n-1;
+        boolean a=true;
+        while(left<right){
+            System.out.println("Checking "+(char)arr[left]+" and "+(char)arr[right]);
+            if ((char) arr[left] !=(char)arr[right]){
                 a=false;
+                System.out.println(s+" is not palindrome");
                 break;
             }
             else{
-                count++;
+                arr[left]=0;
+                arr[right]=0;
+                left++;
+                right--;
             }
         }
         if(a){
