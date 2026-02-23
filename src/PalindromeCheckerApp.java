@@ -5,24 +5,21 @@ public class PalindromeCheckerApp {
         System.out.print("Input:");
         String s=sc.nextLine();
         int n=s.length();
-        boolean a=true;
         int arr[]=new int[n];
         for(int i=0;i<n;i++){
             arr[i]=s.charAt(i);
         }
+        System.out.println("Enter to pop-1 or dequeue-2");
+        int choice=sc.nextInt();
         int count=0;
-        for(int i=n-1;i>=0;i--){
-            if(arr[i]!=s.charAt(count)){
-                System.out.println(s+" is not a palindrome");
-                a=false;
-                break;
-            }
-            else{
-                count++;
-            }
+        if(n==1){
+            System.out.println("Popping: " + (char)arr[choice- 1]);
+            arr[n-1]=0;
         }
-        if(a){
-            System.out.println(s+" is palindrome");
+        else{
+            System.out.println("Dequing: " + (char)arr[count]);
+            arr[count]=0;
+            count++;
         }
     }
 }
