@@ -12,6 +12,10 @@ public class PalindromeCheckerApp {
                 a=false;
                 break;
             }
+            else{
+                left++;
+                right--;
+            }
         }
         if(a){
             System.out.println(s+" Is is a palindrome");
